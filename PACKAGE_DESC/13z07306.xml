@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="packagedesc.xsd">
+	<name>13z07306</name>
+	<description>MDIS5 driver package for MEN Z73 Quadrature decoder driver</description>
+	<date>2012-01-09</date>
+	<revision>1.6</revision>
+	<docroot>DRIVERS/MDIS_LL/Z073_QDEC/DOC/html/index.html</docroot>
+	<modellist>
+		<model>
+			<hwname>16Z073_QDEC</hwname>
+			<description>Quadrature decoder in Chameleon FPGA</description>
+			<devnameprefix>QDEC</devnameprefix>
+			<devtype>MDIS</devtype>
+			<autoid>
+				<chamunitid>0x33</chamunitid>
+				<chamv2id>73</chamv2id>
+			</autoid>
+			<bbslot>
+				<bbismodel>CHAMELEON</bbismodel>
+			</bbslot>
+			<bbslot>
+				<bbismodel>CHAMELEON_PCITBL</bbismodel>
+			</bbslot>
+		</model>
+	</modellist>
+	<settinglist>
+		<setting>
+			<name>Z073_INT_PRS</name>
+			<description>Press push button interrupt</description>
+			<type>U_INT32</type>
+			<defaultvalue>0</defaultvalue>
+			<choises>
+				<choise>
+					<value>1</value>
+					<description>enabled</description>
+				</choise>
+				<choise>
+					<value>0</value>
+					<description>disabled</description>
+				</choise>
+			</choises>
+		</setting>
+		<setting>
+			<name>Z073_INT_REL</name>
+			<description>Release push button interrupt</description>
+			<type>U_INT32</type>
+			<defaultvalue>0</defaultvalue>
+			<choises>
+				<choise>
+					<value>1</value>
+					<description>enabled</description>
+				</choise>
+				<choise>
+					<value>0</value>
+					<description>disabled</description>
+				</choise>
+			</choises>
+		</setting>
+		<setting>
+			<name>Z073_INT_UP</name>
+			<description>Button move up interrupt</description>
+			<type>U_INT32</type>
+			<defaultvalue>0</defaultvalue>
+			<choises>
+				<choise>
+					<value>1</value>
+					<description>enabled</description>
+				</choise>
+				<choise>
+					<value>0</value>
+					<description>disabled</description>
+				</choise>
+			</choises>
+		</setting>
+		<setting>
+			<name>Z073_INT_DWN</name>
+			<description>Button move down interrupt</description>
+			<type>U_INT32</type>
+			<defaultvalue>0</defaultvalue>
+			<choises>
+				<choise>
+					<value>1</value>
+					<description>enabled</description>
+				</choise>
+				<choise>
+					<value>0</value>
+					<description>disabled</description>
+				</choise>
+			</choises>
+		</setting>
+		<setting>
+			<name>Z073_STATUSQ_SIZE</name>
+			<description>Size of status queue, mainly relevant on none realtime operating systems </description>
+			<type>U_INT32</type>
+			<defaultvalue>10</defaultvalue>
+		</setting>
+	</settinglist>
+	<swmodulelist>
+		<swmodule>
+			<name>z73</name>
+			<description>Driver for Z73_QDEC</description>
+			<type>Low Level Driver</type>
+			<makefilepath>Z073_QDEC/DRIVER/COM/driver.mak</makefilepath>
+		</swmodule>
+		<swmodule internal="false">
+			<name>z73_simp</name>
+			<description>Example program for Z073</description>
+			<type>Driver Specific Tool</type>
+			<makefilepath>Z073_QDEC/EXAMPLE/Z73_SIMP/COM/program.mak</makefilepath>
+		</swmodule>
+  </swmodulelist>
+</package>
