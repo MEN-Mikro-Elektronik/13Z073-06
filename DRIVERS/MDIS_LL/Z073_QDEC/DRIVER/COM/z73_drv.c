@@ -3,51 +3,47 @@
  *        \file  z73_drv.c
  *
  *      \author  Christian.Schuster@men.de
- *        $Date: 2012/01/09 11:34:43 $
- *    $Revision: 1.5 $
  *
  *      \brief   Low-level driver for Z73 module
  *
  *     Required: OSS, DESC, DBG, ID libraries
  *
  *     \switches _ONE_NAMESPACE_PER_DRIVER_
- */
- /*-------------------------------[ History ]--------------------------------
  *
- * $Log: z73_drv.c,v $
- * Revision 1.5  2012/01/09 11:34:43  GLeonhardt
- * R: 1.) New variant with 24 bit position
- *    2.) Only 8 bit position of 16 bit counter is used
- * M: 1.) Add switch Z73_POSCNT_24 to enable 24 bit suport
- *    2.) Return 16 bit position or 24 bit
- *
- * Revision 1.4  2010/04/21 15:49:01  amorbach
- * R: Porting to MDIS5
- * M: changed according to MDIS Porting Guide 0.8
- *
- * Revision 1.3  2007/09/25 13:52:11  cs
- * fixed:
- *   - M_getstat(STATUS): only read status from HW when status queue empty
- *                        return status from queue when queue full
- *     reason: once queue full M_getstat would just return an error
- *             and there was no way to empty it
- * changed:
- *   - default status queue size now 10
- *     reason: double click on P&T sometimes lead ot queue overflow already
- *
- * Revision 1.2  2006/02/28 16:14:51  cs
- * changed:
- *     - drv doesn't support redundant M_read any more (return ERR_LL_ILL_FUNC)
- * fixed:
- *     - getStatus always clears all status bits
- *
- * Revision 1.1  2005/11/29 16:13:18  cs
- * Initial Revision
  *
  *---------------------------------------------------------------------------
- * (c) Copyright 2010 by MEN Mikro Elektronik GmbH, Nuremberg, Germany
+ * Copyright 2010-2019, MEN Mikro Elektronik GmbH
  ****************************************************************************/
+
+ /*
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 #include "z73_int.h"
+
+#ifdef Z73_POSCNT_24
+    #ifdef Z73_SW
+        static const char IdentString[]=MENT_XSTR_SFX(MAK_REVISION,Z73_POSCNT_24 swapped);
+    #else
+        static const char IdentString[]=MENT_XSTR_SFX(MAK_REVISION,Z73_POSCNT_24 nonswapped);
+    #endif
+#else
+    #ifdef Z73_SW
+        static const char IdentString[]=MENT_XSTR_SFX(MAK_REVISION,Z73_POSCNT_16 swapped);
+    #else
+        static const char IdentString[]=MENT_XSTR_SFX(MAK_REVISION,Z73_POSCNT_16 nonswapped);
+    #endif
+#endif
 
 /****************************** Z73_GetEntry ********************************/
 /** Initialize driver's jump table
@@ -829,18 +825,7 @@ static int32 Z73_Info(
  */
 static char* Ident( void )
 {
-    return( "Z73 - Z73 low level driver: $Id: z73_drv.c,v 1.5 2012/01/09 11:34:43 GLeonhardt Exp $"
-            #ifdef Z73_POSCNT_24
-             " Z73_POSCNT_24"
-            #else
-             " Z73_POSCNT_16"
-            #endif
-            #ifdef Z73_SW
-             " swapped"
-            #else
-             " nonswapped"
-            #endif
-            );
+	return( (char*) IdentString );
 }
 
 /********************************* Cleanup *********************************/

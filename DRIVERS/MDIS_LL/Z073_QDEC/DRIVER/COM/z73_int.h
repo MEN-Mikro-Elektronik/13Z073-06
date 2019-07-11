@@ -3,8 +3,6 @@
  *        \file  z73_int.h
  *
  *      \author  Christian.Schuster@men.de
- *        $Date: 2012/01/09 11:34:46 $
- *    $Revision: 1.4 $
  *
  *       \brief  Header file for Z73 driver containing
  *               Z73 specific status codes and
@@ -13,29 +11,26 @@
  *    \switches  _ONE_NAMESPACE_PER_DRIVER_
  *               _LL_DRV_
  *               Z73_POSCNT_24
- */
- /*-------------------------------[ History ]--------------------------------
  *
- * $Log: z73_int.h,v $
- * Revision 1.4  2012/01/09 11:34:46  GLeonhardt
- * R: 1.) New variant with 24 bit position
- *    2.) Only 8 bit position of 16 bit counter is used
- * M: 1.) Add switch Z73_POSCNT_24 to enable 24 bit suport
- *    2.) Return 16 bit position or 24 bit
- *
- * Revision 1.3  2010/04/21 15:49:21  amorbach
- * R: Porting to MDIS5
- * M: changed according to MDIS Porting Guide 0.8
- *
- * Revision 1.2  2006/06/01 17:08:45  cs
- * changed ADDRSPACE_SIZE to 16 (Chameleon BBIS reports real size)
- *
- * Revision 1.1  2005/11/29 16:13:19  cs
- * Initial Revision
  *
  *---------------------------------------------------------------------------
- * (c) Copyright 2005 by MEN Mikro Elektronik GmbH, Nuremberg, Germany
+ * Copyright 2005-2019, MEN Mikro Elektronik GmbH
  ****************************************************************************/
+
+ /*
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #ifndef _Z73_INT_H
 #define _Z73_INT_H

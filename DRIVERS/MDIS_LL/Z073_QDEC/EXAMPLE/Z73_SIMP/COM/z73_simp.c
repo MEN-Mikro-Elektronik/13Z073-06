@@ -6,8 +6,6 @@
 /*!
  *         \file z73_simp.c
  *       \author Christian.Schuster@men.de
- *        $Date: 2012/01/09 11:34:53 $
- *    $Revision: 1.6 $
  *
  *       \brief  Simple example program for the Z73 driver
  *
@@ -22,44 +20,27 @@
  *
  *     Required: libraries: mdis_api
  *     \switches Z73_POSCNT_24 (enable 24 Bit position)
- */
- /*-------------------------------[ History ]--------------------------------
  *
- * $Log: z73_simp.c,v $
- * Revision 1.6  2012/01/09 11:34:53  GLeonhardt
- * R: 1.) New variant with 24 bit position
- *    2.) Only 8 bit position of 16 bit counter is used
- * M: 1.) Add switch Z73_POSCNT_24 to enable 24 bit suport
- *    2.) Return 16 bit position or 24 bit
- *
- * Revision 1.5  2010/04/21 15:50:15  amorbach
- * R: Porting to MDIS5
- * M: changed according to MDIS Porting Guide 0.8
- *
- * Revision 1.4  2007/09/25 13:52:13  cs
- * fixed:
- *   - refined error handling when queue full reported from driver
- *     now all status messages are read once a signal is received
- *     reason: on multiple press/return events (multiple state messages) only one
- *             was read, the other ones where left in the driver (overflow)
- *   - refined cleanup of signals in case of errors (cosmetic)
- *
- * Revision 1.3  2006/06/08 16:57:13  cs
- * fixed: all M_getstat and printf removed from signal handler
- *
- * Revision 1.2  2006/02/28 16:18:20  cs
- * fixed:
- *     - don't consider Z073_ERR_NO_STATUS as actual error
- *     - handle queue overflow errors (enable interrupt again)
- *
- * Revision 1.1  2005/11/29 16:13:28  cs
- * Initial Revision
  *
  *---------------------------------------------------------------------------
- * (c) Copyright 2010 by MEN Mikro Elektronik GmbH, Nuremberg, Germany
+ * Copyright 2010-2019, MEN Mikro Elektronik GmbH
  ****************************************************************************/
 
-static const char RCSid[]="$Id: z73_simp.c,v 1.6 2012/01/09 11:34:53 GLeonhardt Exp $";
+ /*
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 
 #include <stdio.h>
 #include <string.h>
@@ -70,6 +51,8 @@ static const char RCSid[]="$Id: z73_simp.c,v 1.6 2012/01/09 11:34:53 GLeonhardt 
 #include <MEN/mdis_api.h>
 #include <MEN/mdis_err.h>
 #include <MEN/z73_drv.h>
+
+static const char IdentString[]=MENT_XSTR(MAK_REVISION);
 
 /*--------------------------------------+
 |   DEFINES                             |

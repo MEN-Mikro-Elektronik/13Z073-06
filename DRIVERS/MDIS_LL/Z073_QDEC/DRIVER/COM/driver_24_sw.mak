@@ -1,27 +1,33 @@
 #***************************  M a k e f i l e  *******************************
 #
 #         Author: Christian.Schuster@men.de
-#          $Date: 2012/01/09 11:34:52 $
-#      $Revision: 1.1 $
 #
 #    Description: Makefile definitions for the Z73 driver, swapped variant
 #
-#---------------------------------[ History ]---------------------------------
-#
-#   $Log: driver_24_sw.mak,v $
-#   Revision 1.1  2012/01/09 11:34:52  GLeonhardt
-#   Initial Revision
-#
-#   Revision 1.1  2005/11/29 16:13:22  cs
-#   Initial Revision
-#
 #-----------------------------------------------------------------------------
-# (c) Copyright 2005 by MEN Mikro Elektronik GmbH, Nuremberg, Germany
+#   Copyright 2005-2019, MEN Mikro Elektronik GmbH
 #*****************************************************************************
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 MAK_NAME=z73_sw
+# the next line is updated during the MDIS installation
+STAMPED_REVISION="13Z073-06_01_06-0-g65ee227-dirty_2016-05-03"
+
+DEF_REVISION=MAK_REVISION=$(STAMPED_REVISION)
 
 MAK_SWITCH=$(SW_PREFIX)MAC_MEM_MAPPED	\
+		$(SW_PREFIX)$(DEF_REVISION) \
 		   $(SW_PREFIX)MAC_BYTESWAP		\
 		   $(SW_PREFIX)Z73_SW			\
 		   $(SW_PREFIX)Z73_POSCNT_24	\

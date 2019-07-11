@@ -3,35 +3,32 @@
  *        \file  z73_doc.c
  *
  *      \author  Christian.Schuster@men.de
- *        $Date: 2012/01/09 11:34:48 $
- *    $Revision: 1.3 $
  *
  *      \brief   User documentation for Z73 module driver
  *
  *     Required: -
  *
  *     \switches -
- */
- /*-------------------------------[ History ]--------------------------------
- *
- * $Log: z73_doc.c,v $
- * Revision 1.3  2012/01/09 11:34:48  GLeonhardt
- * R: 1.) New variant with 24 bit position
- *    2.) Only 8 bit position of 16 bit counter is used
- * M: 1.) Add switch Z73_POSCNT_24 to enable 24 bit suport
- *    2.) Return 16 bit position or 24 bit
- *
- * Revision 1.2  2006/02/28 16:12:34  cs
- * fixed:
- *     - driver doesn't support M_read any more
- *
- * Revision 1.1  2005/11/29 16:13:20  cs
- * Initial Revision
  *
  *
  *---------------------------------------------------------------------------
- * (c) Copyright 2005..2006 by MEN Mikro Elektronik GmbH, Nuremberg, Germany
+ * Copyright 2005-2019, MEN Mikro Elektronik GmbH
  ****************************************************************************/
+
+ /*
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 /*! \mainpage
 	This is the documentation of the MDIS low-level driver for the 16Z073_QDEC
