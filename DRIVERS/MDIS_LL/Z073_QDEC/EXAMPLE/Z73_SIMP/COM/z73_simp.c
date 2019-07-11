@@ -25,7 +25,6 @@
  *---------------------------------------------------------------------------
  * Copyright 2010-2019, MEN Mikro Elektronik GmbH
  ****************************************************************************/
-
  /*
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,8 +50,6 @@
 #include <MEN/mdis_api.h>
 #include <MEN/mdis_err.h>
 #include <MEN/z73_drv.h>
-
-static const char IdentString[]=MENT_XSTR(MAK_REVISION);
 
 /*--------------------------------------+
 |   DEFINES                             |
