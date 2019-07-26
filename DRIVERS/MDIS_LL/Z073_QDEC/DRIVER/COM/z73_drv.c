@@ -211,7 +211,7 @@ static int32 Z73_Init(
     }
     llHdl->statusQSizeGot = gotsize;
     DBGWRT_1((DBH, "LL - Z73_Init statusQ=0x%08x size=%d\n",
-            (int)llHdl->statusQ, (int)llHdl->statusQSizeGot));
+            (u_int32 *)llHdl->statusQ, (int)llHdl->statusQSizeGot));
 
     /* clear */
     OSS_MemFill(osHdl, gotsize, (char*)llHdl->statusQ, 0x00);
@@ -844,7 +844,7 @@ static int32 Cleanup(
 )
 {
     DBGWRT_1((DBH, "Z73 Cleanup: statusQ*=0x%08x   size=%d llHdl*=0x%08p\n",
-     (int)llHdl->statusQ, (int)llHdl->statusQSizeGot, llHdl));
+     (u_int32 *)llHdl->statusQ, (int)llHdl->statusQSizeGot, llHdl));
     /*------------------------------+
     |  close handles                |
     +------------------------------*/
