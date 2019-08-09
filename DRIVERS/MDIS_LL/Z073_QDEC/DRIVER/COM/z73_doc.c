@@ -55,7 +55,7 @@
 
 	\n \subsection General General
 
-	This Z073 MDIS4 driver initializes the hardware and services the interrupt
+	This Z073 MDIS5 driver initializes the hardware and services the interrupt
 	of the FPGA module. If an interrupt occurs, the driver will send a signal
 	(if installed) to the application to inform it that the button was moved,
 	pressed or released.
