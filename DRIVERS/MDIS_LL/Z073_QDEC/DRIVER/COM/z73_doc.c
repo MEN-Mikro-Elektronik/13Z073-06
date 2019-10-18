@@ -156,14 +156,6 @@
 
 	\subsection z73_simp  Simple example for using the driver
 	z73_simp.c (see example section)
-
-	\subsection z73_min   Minimum descriptor
-	z73_min.dsc
-	demonstrates the minimum set of options necessary for using the drver.
-
-	\subsection z73_max   Minimum descriptor
-	z73_min.dsc
-	shows all possible configuration options for this driver.
 */
 
 /** \example z73_simp.c
