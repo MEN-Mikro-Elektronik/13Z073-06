@@ -6,26 +6,29 @@ Default Window=main
 Default topic=index.html
 Index file=index.hhk
 Language=0x409 English (United States)
-Title=MDIS4 Driver for Z073_QDEC
+Title=Z73 MDIS Driver
 
 [WINDOWS]
-main="MDIS4 Driver for Z073_QDEC","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x387e,,,,,,,,0
+main="Z73 MDIS Driver","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x387e,,,,,,,,0
 
 [FILES]
 index.html
 files.html
 z73__simp_8c-example.html
-z73__drv_8h-source.html
+z73__doc_8c-source.html
+z73__drv_8c-source.html
 z73__int_8h-source.html
 z73__doc_8c.html
 z73__drv_8c.html
-z73__drv_8h.html
 z73__int_8h.html
-z73__simp_8c.html
 annotated.html
 functions.html
+functions_vars.html
 structLL__HANDLE.html
 dummy.html
 examples.html
 globals.html
+globals_func.html
+globals_vars.html
+globals_defs.html
 pages.html
